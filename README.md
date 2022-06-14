@@ -16,9 +16,7 @@ npx --yes create-app-latest
 npx create-app-latest --name newApp
 ```
 
-**type**
-
-`webapp` | `website`
+**type** `webapp` | `website` default 'webapp'
 
 ```sh
 npx create-app-latest --name newApp --type website
