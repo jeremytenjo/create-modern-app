@@ -10,7 +10,7 @@ npx create-app-latest
 
 ## Options
 
-**name**
+**name** default `app`
 
 ```sh
 npx create-app-latest --name newApp
