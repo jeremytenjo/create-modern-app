@@ -24,10 +24,10 @@ npx create-app-latest --name newApp
 npx create-app-latest --name newApp --type website
 ```
 
-#### webapp
+`webapp`
 
 Creates a Vite project with React, Storybook, MUI, Firebase, Vitest, Playwright, Prettier, ESLint useweb configured
 
-#### website
+`website`
 
 Creates a Nextjs project with React, Storybook, MUI, Vitest, Playwright, Prettier, ESLint, useweb configured
