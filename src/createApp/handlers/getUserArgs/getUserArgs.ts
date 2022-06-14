@@ -3,7 +3,7 @@ import enquirer from 'enquirer'
 
 import getCommandLineArgs from './getCommandLineArgs'
 
-const { MultiSelect } = enquirer as any
+const { Select } = enquirer as any
 
 export type GetUserArgsReturn = {
   name: string
@@ -32,14 +32,14 @@ export default async function getUserArgs(): Promise<GetUserArgsReturn> {
   }
 
   if (!res.type) {
-    const prompt = new MultiSelect({
+    const prompt = new Select({
       name: 'type',
       message: 'Select app type',
       choices: types,
       initial: 'webapp',
     })
 
-    const [type = res.type] = await prompt.run()
+    const type = (await prompt.run()) || res.type
     res = { ...res, type }
   }
 
