@@ -1,6 +1,6 @@
 ## Create App Latest
 
-Quickly create webapps and websites from the terminal
+Quickly create [webapps](https://github.com/jeremytenjo/starter-webapp) and [websites](https://github.com/jeremytenjo/starter-website) from the terminal
 
 ## Usage
 
@@ -24,12 +24,8 @@ npx create-app-latest --name newApp --type website
 
 `webapp`
 
-[Webapp Starter](https://github.com/jeremytenjo/starter-webapp)
-
 Creates a Vite project with React, Storybook, MUI, Firebase, Vitest, Playwright, Prettier, ESLint useweb configured
 
 `website`
-
-[Website Starter](https://github.com/jeremytenjo/starter-website)
 
 Creates a Nextjs project with React, Storybook, MUI, Vitest, Playwright, Prettier, ESLint, useweb configured
