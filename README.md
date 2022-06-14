@@ -5,7 +5,7 @@ Quickly create webapps and websites from the terminal
 ## Usage
 
 ```sh
-npx --yes create-app-latest
+npx create-app-latest
 ```
 
 ## Options
