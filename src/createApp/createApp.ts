@@ -26,12 +26,14 @@ export default async function createApp() {
   console.log(`${chalk.cyan(userArgs.name)} created! ${chalk.yellow(fullOutPath)}`)
   console.log('')
 
-  await shell(`cd ${outputPath} && code . && code . README.md`)
-  console.log('')
+  try {
+    await shell(`cd ${outputPath} && code . && code . README.md`)
+    console.log('')
 
-  console.log(chalk.cyan(`Installing ${chalk.cyan(userArgs.name)} dependencies...`))
-  console.log('')
+    console.log(chalk.cyan(`Installing ${chalk.cyan(userArgs.name)} dependencies...`))
+    console.log('')
 
-  // install dependencies
-  await shell(`cd ${outputPath} && npm i`)
+    // install dependencies
+    await shell(`cd ${outputPath} && npm i`)
+  } catch (error) {}
 }
