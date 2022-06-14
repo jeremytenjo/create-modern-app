@@ -4,7 +4,7 @@
   "description": "Quickly create webapps and websites from the terminal",
   "main": "build/index.js",
   "scripts": {
-    "createApp": "node --loader ts-node/esm ./src/index.ts",
+    "createApp": "node --loader ts-node/esm ./src/index.ts --name testResult/app",
     "build": "node ./node_modules/@useweb/compiler/build --node",
     "deploy": "npm run build && npm publish --access public"
   },

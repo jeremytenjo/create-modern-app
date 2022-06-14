@@ -3,3 +3,4 @@ build
 lerna-debug.log
 .firebase
 firebase-debug.log
+testResult
