@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Quickly create webapps and websites from the terminal",
   "main": "build/index.js",
+  "bin": {
+    "create-app-latest": "build/index.js"
+  },
   "scripts": {
     "createApp": "node --loader ts-node/esm ./src/index.ts --name testResult/app",
     "build": "node ./node_modules/@useweb/compiler/build --node",
