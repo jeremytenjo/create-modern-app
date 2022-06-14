@@ -1,7 +1,7 @@
 {
   "name": "create-app-latest",
   "version": "1.0.0",
-  "description": "CLI to quickly creater webapps and websites",
+  "description": "Quickly create webapps and websites from the terminal",
   "main": "build/index.js",
   "scripts": {
     "createApp": "node --loader ts-node/esm ./src/index.ts",
