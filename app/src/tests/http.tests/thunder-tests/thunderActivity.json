@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "42acf4f6-1b84-4514-a550-ce51b22cdafd",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5002/movies-series-guide/us-central1/mediaSearch",
+    "url": "http://localhost:5002/movies-series-guide/us-central1/mediaSearch",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-05-29T14:29:25.508Z",
+    "modified": "2022-05-29T14:29:33.266Z",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "\n\t{ \n\t \"type\": \"Movies\", \n\t \"quantity\": 1, \n\t \"query\":\"endgame\"\n\t}\n",
+      "form": []
+    },
+    "tests": []
+  }
+]

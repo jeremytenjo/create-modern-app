@@ -1,0 +1,5 @@
+node_modules
+build
+lerna-debug.log
+.firebase
+firebase-debug.log

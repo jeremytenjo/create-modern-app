@@ -1,0 +1,13 @@
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#fff",
+    "titleBar.inactiveForeground": "#ffffff",
+    "titleBar.activeBackground": "#006483",
+    "titleBar.inactiveBackground": "#006483"
+  },
+  "prettier.configPath": "./devtools/prettier/prettier.config.json",
+  "superCodeGenerator.prettierConfigFilePath": "devtools/prettier/prettier.config.json",
+  "superCodeGenerator.schemaFilePath": "devtools/codeGenerator/superCodeGen.schema.cjs",
+  "thunder-client.saveToWorkspace": true,
+  "thunder-client.workspaceRelativePath": "src/tests/http.tests"
+}

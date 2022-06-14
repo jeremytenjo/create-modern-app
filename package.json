@@ -1,0 +1,25 @@
+{
+  "name": "create-app-latest",
+  "version": "1.0.0",
+  "description": "Create apps quickly",
+  "main": "build/index.js",
+  "scripts": {
+    "createApp": "node --loader ts-node/esm ./src/index.ts",
+    "build": "node ./node_modules/@useweb/compiler/build --node",
+    "deploy": "npm run build && npm publish --access public"
+  },
+  "author": "Jeremy Tenjo",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/command-line-args": "^5.2.0",
+    "@types/concurrently": "^7.0.0",
+    "@types/degit": "^2.8.3",
+    "@types/node-emoji": "^1.8.1",
+    "@useweb/compiler": "^2.2.0",
+    "chalk": "^4.1.2",
+    "command-line-args": "^5.2.1",
+    "degit": "^2.8.4",
+    "enquirer": "^2.3.6",
+    "ts-node": "^10.8.1"
+  }
+}
