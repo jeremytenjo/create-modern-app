@@ -1,7 +1,7 @@
 {
   "name": "create-modern-app",
   "version": "1.0.0",
-  "description": "Quickly create webapps and websites from the terminal",
+  "description": "Quickly create modern webapps and websites from the terminal",
   "author": "Jeremy Tenjo",
   "license": "ISC",
   "main": "build/index.js",
