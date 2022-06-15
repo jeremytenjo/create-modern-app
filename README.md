@@ -1,4 +1,4 @@
-## Create App Latest
+## Create Modern App
 
 Quickly create [webapps](https://github.com/jeremytenjo/starter-webapp) and [websites](https://github.com/jeremytenjo/starter-website) from the terminal
 
