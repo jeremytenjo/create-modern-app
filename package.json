@@ -1,16 +1,16 @@
 {
-  "name": "create-app-latest",
-  "version": "1.4.0",
+  "name": "create-modern-app",
+  "version": "1.0.0",
   "description": "Quickly create webapps and websites from the terminal",
   "author": "Jeremy Tenjo",
   "license": "ISC",
   "main": "build/index.js",
   "bin": {
-    "create-app-latest": "build/index.js"
+    "create-modern-app": "build/index.js"
   },
   "scripts": {
     "test:dev": "node --loader ts-node/esm ./src/index.ts --name testResult/app --type webapp",
-    "test:prod": "npm i -g && npx --yes create-app-latest --name testResult/app --type webapp",
+    "test:prod": "npm i -g && npx --yes create-modern-app --name testResult/app --type webapp",
     "build": "node ./node_modules/@useweb/compiler/build --node --format cjs",
     "deploy": "npm run build && npm publish --access public"
   },

@@ -5,7 +5,7 @@ Quickly create [webapps](https://github.com/jeremytenjo/starter-webapp) and [web
 ## Usage
 
 ```sh
-npx create-app-latest
+npx create-modern-app
 ```
 
 ## Options
@@ -13,13 +13,13 @@ npx create-app-latest
 **name** default `app`
 
 ```sh
-npx create-app-latest --name newApp
+npx create-modern-app --name newApp
 ```
 
 **type** `webapp` | `website` default `webapp`
 
 ```sh
-npx create-app-latest --name newApp --type website
+npx create-modern-app --name newApp --type website
 ```
 
 `webapp`
