@@ -1,4 +1,8 @@
-## Create Modern App
+<p align="center">
+  <a href="https://hayletenjo.com/" rel="noopener" target="_blank"><img width="300" src="https://github.com/jeremytenjo/create-modern-app/blob/main/public/images/logo.png" alt="Create Modern App Logo"></a></p>
+</p>
+
+<h1 align="center">Create Modern App</h1>
 
 Quickly create [webapps](https://github.com/jeremytenjo/starter-webapp) and [websites](https://github.com/jeremytenjo/starter-website) from the terminal
 
