@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://hayletenjo.com/" rel="noopener" target="_blank"><img width="300" src="https://github.com/jeremytenjo/create-modern-app/blob/main/public/images/logo.png" alt="Create Modern App Logo"></a></p>
+  <a href="https://hayletenjo.com/" rel="noopener" target="_blank"><img width="200" src="https://github.com/jeremytenjo/create-modern-app/blob/main/public/images/logo.png" alt="Create Modern App Logo"></a></p>
 </p>
 
 <h1 align="center">Create Modern App</h1>
