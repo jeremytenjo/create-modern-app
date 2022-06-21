@@ -8,6 +8,10 @@
   "bin": {
     "create-modern-app": "build/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeremytenjo/create-modern-app"
+  },
   "scripts": {
     "test:dev": "node --loader ts-node/esm ./src/index.ts --name testResult/app --type webapp",
     "test:prod": "npm i -g && npx --yes create-modern-app --name testResult/app --type webapp",
