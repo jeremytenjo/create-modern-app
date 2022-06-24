@@ -45,5 +45,7 @@ export default async function getUserArgs(): Promise<GetUserArgsReturn> {
     res = { ...res, type }
   }
 
+  console.log('')
+
   return res
 }
