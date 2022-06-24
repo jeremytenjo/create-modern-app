@@ -22,14 +22,14 @@ export default async function createApp() {
         outputPath,
         force: userArgs.force,
       }),
-    message: `Creating ${chalk.cyan(userArgs.name)}...`,
+    title: `Creating ${chalk.cyan(userArgs.name)}`,
     successMessage: `${chalk.cyan(userArgs.name)} created! ${chalk.yellow(fullOutPath)}`,
     errorMessage: `Failed to create ${chalk.cyan(userArgs.name)}`,
   })
 
   await task({
     fn: () => shell(`cd ${outputPath} && code . && code . README.md`),
-    message: 'Opening VS Code',
+    title: 'Opening VS Code',
     successMessage: 'Opened VS Code',
     errorMessage: 'Failed to open VS Code',
     onError: () =>
@@ -38,7 +38,7 @@ export default async function createApp() {
 
   await task({
     fn: () => shell(`cd ${outputPath} && npm i`),
-    message: `Installing ${chalk.cyan(userArgs.name)} dependencies...`,
+    title: `Installing ${chalk.cyan(userArgs.name)} dependencies`,
     successMessage: 'Dependencies installed',
     errorMessage: 'Failed to install dependencies',
   })

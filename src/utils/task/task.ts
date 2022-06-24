@@ -1,9 +1,8 @@
 import chalk from 'chalk'
-import ora from 'ora'
 
 type TaskProps = {
   fn: (props?: any) => Promise<any>
-  message: string
+  title: string
   errorMessage: string
   successMessage: string
   onError?: (error: any) => Promise<any>
@@ -11,14 +10,12 @@ type TaskProps = {
 }
 
 export default async function task(props: TaskProps) {
-  const spinner = ora(props.message).start()
-
-  console.log('')
-  console.log(props.message)
+  console.log(`● ${props.title}`)
   console.log('')
 
   try {
     const result = await props.fn()
+
     console.log('')
     console.log(props.successMessage)
 
