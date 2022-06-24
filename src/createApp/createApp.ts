@@ -6,6 +6,7 @@ import cloneRepo from '../utils/cloneRepo/cloneRepo'
 import getRepoUrl from '../utils/getRepoUrl/getRepoUrl'
 import getUserArgs, { type GetUserArgsReturn } from './handlers/getUserArgs/getUserArgs'
 import shell from '../utils/shell/shell'
+import task from '../utils/task/task'
 
 export default async function createApp() {
   // get user options - name , app type = webapp, website, demo
@@ -14,26 +15,31 @@ export default async function createApp() {
   const outputPath = `${userArgs.name}`
   const fullOutPath = path.join(process.cwd(), outputPath)
 
-  // clone repo depending on type
-  console.log('')
-  console.log(`Creating ${chalk.cyan(userArgs.name)}...`)
-  console.log('')
-  await cloneRepo({
-    repoUrl,
-    outputPath,
+  await task({
+    fn: () =>
+      cloneRepo({
+        repoUrl,
+        outputPath,
+        force: userArgs.force,
+      }),
+    message: `Creating ${chalk.cyan(userArgs.name)}...`,
+    successMessage: `${chalk.cyan(userArgs.name)} created! ${chalk.yellow(fullOutPath)}`,
+    errorMessage: `Failed to create ${chalk.cyan(userArgs.name)}`,
   })
 
-  console.log(`${chalk.cyan(userArgs.name)} created! ${chalk.yellow(fullOutPath)}`)
-  console.log('')
+  await task({
+    fn: () => shell(`cd ${outputPath} && code . && code . README.md`),
+    message: 'Opening VS Code',
+    successMessage: 'Opened VS Code',
+    errorMessage: 'Failed to open VS Code',
+    onError: () =>
+      shell(`cd ${outputPath} && code-insiders . && code-insiders . README.md`),
+  })
 
-  try {
-    await shell(`cd ${outputPath} && code . && code . README.md`)
-  } catch (error) {
-    shell(`cd ${outputPath} && code-insiders . && code-insiders . README.md`)
-  }
-
-  console.log(chalk.cyan(`Installing ${chalk.cyan(userArgs.name)} dependencies...`))
-  console.log('')
-  // install dependencies
-  await shell(`cd ${outputPath} && npm i`)
+  await task({
+    fn: () => shell(`cd ${outputPath} && npm i`),
+    message: `Installing ${chalk.cyan(userArgs.name)} dependencies...`,
+    successMessage: 'Dependencies installed',
+    errorMessage: 'Failed to install dependencies',
+  })
 }

@@ -8,6 +8,7 @@ const { Select } = enquirer as any
 export type GetUserArgsReturn = {
   name: string
   type: 'webapp' | 'website' | 'demo'
+  force: boolean
 }
 
 const types: GetUserArgsReturn['type'][] = ['webapp', 'website', 'demo']
@@ -15,9 +16,10 @@ const types: GetUserArgsReturn['type'][] = ['webapp', 'website', 'demo']
 export default async function getUserArgs(): Promise<GetUserArgsReturn> {
   const args = getCommandLineArgs()
 
-  let res: any = {
+  let res: GetUserArgsReturn = {
     name: args.name,
     type: args.type,
+    force: args.force,
   }
 
   if (!res.name) {

@@ -33,3 +33,11 @@ Creates a Vite project with React, Storybook, MUI, Firebase, Vitest, Playwright,
 `website`
 
 Creates a Nextjs project with React, Storybook, MUI, Vitest, Playwright, Prettier, ESLint, useweb configured
+
+**force** default `false`
+
+If true, it will override existing output folder
+
+```sh
+npx create-modern-app --force
+```
