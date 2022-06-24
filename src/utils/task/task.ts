@@ -10,14 +10,14 @@ type TaskProps = {
 }
 
 export default async function task(props: TaskProps) {
-  console.log(`● ${props.title}`)
+  console.log(`${chalk.yellow('⚡')}${props.title}`)
   console.log('')
 
   try {
     const result = await props.fn()
 
     console.log('')
-    console.log(props.successMessage)
+    console.log(`${chalk.green('✔')} ${props.successMessage}`)
 
     return result
   } catch (error) {
