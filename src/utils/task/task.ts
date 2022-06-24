@@ -5,7 +5,7 @@ type TaskProps = {
   title: string
   errorMessage: string
   successMessage: string
-  onError?: (error: any) => Promise<any>
+  onError?: (error: any) => any
   noBail?: boolean
 }
 
