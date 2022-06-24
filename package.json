@@ -13,10 +13,15 @@
     "url": "https://github.com/jeremytenjo/create-modern-app"
   },
   "scripts": {
-    "test:dev": "node --loader ts-node/esm ./src/index.ts --name testResult/app --type webapp --force",
-    "test:prod": "npm i -g && npx --yes create-modern-app --name testResult/app --type webapp --force",
+    "test:create-webapp-dev": "node --loader ts-node/esm ./src/index.ts --name testResult/webapp --type webapp --force",
+    "test:create-website-dev": "node --loader ts-node/esm ./src/index.ts --name testResult/website --type website --force",
+    "test:create-demo-dev": "node --loader ts-node/esm ./src/index.ts --name testResult/demo --type demo --force",
+    "test:create-webapp-prod": "npm i -g && npx --yes create-modern-app --name testResult/app --type webapp --force",
+    "test:create-website-prod": "npm i -g && npx --yes create-modern-app --name testResult/app --type website --force",
+    "test:create-demo-prod": "npm i -g && npx --yes create-modern-app --name testResult/app --type demo --force",
     "build": "node ./node_modules/@useweb/compiler/build --node --format cjs",
-    "deploy": "npm run build && npm publish --access public"
+    "test": "vitest run",
+    "deploy": "npm run test && npm run build && npm publish --access public"
   },
   "devDependencies": {
     "@types/command-line-args": "^5.2.0",
@@ -28,6 +33,8 @@
     "command-line-args": "^5.2.1",
     "degit": "^2.8.4",
     "enquirer": "^2.3.6",
-    "ts-node": "^10.8.1"
+    "ts-node": "^10.8.1",
+    "vite": "^2.9.12",
+    "vitest": "^0.16.0"
   }
 }
