@@ -22,7 +22,7 @@ export default async function task(props: TaskProps) {
     return result
   } catch (error) {
     if (props?.onError) {
-      props.onError(error)
+      await props.onError(error)
       return
     }
 
