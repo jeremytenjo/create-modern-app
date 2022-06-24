@@ -1,3 +1,4 @@
+// https://vitest.dev/api/
 import { test } from 'vitest'
 
 import shell from '../../src/utils/shell/shell.js'
