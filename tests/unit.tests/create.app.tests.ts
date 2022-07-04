@@ -3,7 +3,7 @@ import path from 'path'
 import { describe, it } from 'vitest'
 
 import shell from '../../src/utils/shell/shell.js'
-import removeFolder from '../../src/utils/removeFolder/removeFolder'
+import removeFolder from '../../src/utils/removeFolder/removeFolder.js'
 
 await removeFolder(path.join(process.cwd(), 'testResult'))
 
@@ -11,24 +11,24 @@ describe('Create app', () => {
   it.concurrent(
     'Create webapp',
     async () => {
-      await shell('npm run test:create-webapp-dev')
+      await shell('npm run test:create-webapp-prod')
     },
-    40000,
+    80000,
   )
 
   it.concurrent(
     'Create website',
     async () => {
-      await shell('npm run test:create-website-dev')
+      await shell('npm run test:create-website-prod')
     },
-    40000,
+    80000,
   )
 
   it.concurrent(
     'Create demo',
     async () => {
-      await shell('npm run test:create-demo-dev')
+      await shell('npm run test:create-demo-prod')
     },
-    40000,
+    80000,
   )
 })
