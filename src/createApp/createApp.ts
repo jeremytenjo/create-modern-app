@@ -7,6 +7,7 @@ import getRepoUrl from '../utils/getRepoUrl/getRepoUrl'
 import getUserArgs, { type GetUserArgsReturn } from './handlers/getUserArgs/getUserArgs'
 import shell from '../utils/shell/shell'
 import task from '../utils/task/task'
+import renderTitle from '../utils/renderTitle/renderTitle'
 
 export default async function createApp() {
   // get user options - name , app type = webapp, website, demo
@@ -14,6 +15,8 @@ export default async function createApp() {
   const repoUrl = getRepoUrl({ type: userArgs.type })
   const outputPath = `${userArgs.name}`
   const fullOutPath = path.join(process.cwd(), outputPath)
+
+  renderTitle({ title: 'CREATE MODERN APP' })
 
   await task({
     fn: () =>
