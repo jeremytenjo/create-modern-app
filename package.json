@@ -12,6 +12,10 @@
     "type": "git",
     "url": "https://github.com/jeremytenjo/create-modern-app"
   },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=6.0.0"
+  },
   "scripts": {
     "test:create-webapp-dev": "node --loader ts-node/esm ./src/index.ts --name testResult/webapp --type webapp --force",
     "test:create-website-dev": "node --loader ts-node/esm ./src/index.ts --name testResult/website --type website --force",
