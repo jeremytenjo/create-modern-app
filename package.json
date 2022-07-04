@@ -24,21 +24,19 @@
     "deploy": "npm run test && npm run build && npm publish --access public"
   },
   "devDependencies": {
-    "@types/command-line-args": "^5.2.0",
-    "@types/concurrently": "^7.0.0",
-    "@types/degit": "^2.8.3",
-    "@types/node-emoji": "^1.8.1",
-    "@useweb/compiler": "^2.2.0",
-    "chalk": "^4.1.2",
-    "command-line-args": "^5.2.1",
-    "degit": "^2.8.4",
-    "enquirer": "^2.3.6",
-    "ts-node": "^10.8.1",
-    "vite": "^2.9.12",
-    "vitest": "^0.16.0"
-  },
-  "dependencies": {
-    "figlet": "^1.5.2",
-    "gradient-string": "^2.0.1"
+    "@types/command-line-args": "5.2.0",
+    "@types/concurrently": "7.0.0",
+    "@types/degit": "2.8.3",
+    "@types/node-emoji": "1.8.1",
+    "@useweb/compiler": "2.2.0",
+    "chalk": "4.1.2",
+    "command-line-args": "5.2.1",
+    "degit": "2.8.4",
+    "figlet": "1.5.2",
+    "gradient-string": "2.0.1",
+    "enquirer": "2.3.6",
+    "ts-node": "10.8.1",
+    "vite": "2.9.12",
+    "vitest": "0.16.0"
   }
 }
