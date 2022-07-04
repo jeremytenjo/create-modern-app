@@ -11,7 +11,7 @@ describe('Create app', () => {
   it.concurrent(
     'Create webapp',
     async () => {
-      await shell('npm run test:create-webapp-prod')
+      await shell('npm run test:create-webapp-dev')
     },
     40000,
   )
@@ -19,7 +19,7 @@ describe('Create app', () => {
   it.concurrent(
     'Create website',
     async () => {
-      await shell('npm run test:create-website-prod')
+      await shell('npm run test:create-website-dev')
     },
     40000,
   )
@@ -27,7 +27,7 @@ describe('Create app', () => {
   it.concurrent(
     'Create demo',
     async () => {
-      await shell('npm run test:create-demo-prod')
+      await shell('npm run test:create-demo-dev')
     },
     40000,
   )
