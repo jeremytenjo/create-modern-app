@@ -1,7 +1,11 @@
+import path from 'path'
 // https://vitest.dev/api/
 import { describe, it } from 'vitest'
 
 import shell from '../../src/utils/shell/shell.js'
+import removeFolder from '../../src/utils/removeFolder/removeFolder'
+
+await removeFolder(path.join(process.cwd(), 'testResult'))
 
 describe('Create app', () => {
   it.concurrent(
