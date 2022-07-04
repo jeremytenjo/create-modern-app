@@ -10,13 +10,13 @@ import task from '../utils/task/task'
 import renderTitle from '../utils/renderTitle/renderTitle'
 
 export default async function createApp() {
+  renderTitle({ title: 'CREATE MODERN APP' })
+
   // get user options - name , app type = webapp, website, demo
   const userArgs: GetUserArgsReturn = await getUserArgs()
   const repoUrl = getRepoUrl({ type: userArgs.type })
   const outputPath = `${userArgs.name}`
   const fullOutPath = path.join(process.cwd(), outputPath)
-
-  renderTitle({ title: 'CREATE MODERN APP' })
 
   await task({
     fn: () =>
