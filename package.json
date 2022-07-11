@@ -1,6 +1,6 @@
 {
   "name": "create-modern-app",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Quickly create modern webapps and websites from the terminal",
   "author": "Jeremy Tenjo",
   "license": "ISC",
@@ -25,8 +25,8 @@
     "test:create-demo-prod": "npm i -g && npx --yes create-modern-app --name testResult/app --type demo --force",
     "build": "node ./node_modules/@useweb/compiler/build --node --format cjs",
     "test": "vitest run",
-    "deploy": "npm run test && npm run build && npm publish --access public",
-    "deploy:without-testing": "npm run build && npm publish --access public"
+    "deploy": "npm run test && npm run build && npm publish --access public && auto-changelog -p && git add CHANGELOG.md",
+    "deploy:without-testing": "npm run build && npm publish --access public && auto-changelog -p && git add CHANGELOG.md"
   },
   "devDependencies": {
     "@types/command-line-args": "5.2.0",
@@ -34,12 +34,12 @@
     "@types/degit": "2.8.3",
     "@types/node-emoji": "1.8.1",
     "@useweb/compiler": "2.2.0",
+    "auto-changelog": "2.4.0",
     "chalk": "4.1.2",
     "command-line-args": "5.2.1",
     "degit": "2.8.4",
     "enquirer": "2.3.6",
     "gradient-string": "2.0.1",
-    "listr": "0.14.3",
     "ts-node": "10.8.1",
     "vite": "2.9.12",
     "vitest": "0.16.0"

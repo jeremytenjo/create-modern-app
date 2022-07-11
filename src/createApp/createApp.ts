@@ -1,12 +1,12 @@
 import path from 'path'
 
 import chalk from 'chalk'
-import Listr from 'listr'
 
 import cloneRepo from '../utils/cloneRepo/cloneRepo'
 import getRepoUrl from '../utils/getRepoUrl/getRepoUrl'
 import getUserArgs, { type GetUserArgsReturn } from './handlers/getUserArgs/getUserArgs'
 import shell from '../utils/shell/shell'
+import task from '../utils/task/task'
 import renderTitle from '../utils/renderTitle/renderTitle'
 
 export default async function createApp() {
@@ -18,34 +18,40 @@ export default async function createApp() {
   const outputPath = `${userArgs.name}`
   const fullOutPath = path.join(process.cwd(), outputPath)
 
-  const tasks = new Listr([
-    {
-      title: `Creating ${chalk.cyan(userArgs.name)}`,
-      task: () =>
-        cloneRepo({
-          repoUrl,
-          outputPath,
-          force: userArgs.force,
-        }),
-    },
-    {
-      title: 'Opening VS Code',
-      task: () => shell(`cd ${outputPath} && code . && code . README.md`),
-    },
-    {
-      title: `Install ${chalk.cyan(userArgs.name)} dependencies`,
-      task: () => shell(`cd ${outputPath} && npm i`),
-    },
-  ])
+  await task({
+    fn: () =>
+      cloneRepo({
+        repoUrl,
+        outputPath,
+        force: userArgs.force,
+      }),
+    title: `Creating ${chalk.cyan(userArgs.name)}`,
+    successMessage: `${chalk.cyan(userArgs.name)} created!`,
+    errorMessage: `Failed to create ${chalk.cyan(userArgs.name)}`,
+  })
 
-  try {
-    await tasks.run()
-    console.log('')
-    console.log(`🚀 ${chalk.cyan(userArgs.name)} created! ${chalk.yellow(fullOutPath)}`)
-    console.log('')
-  } catch (error) {
-    console.log('')
-    console.error(error)
-    console.log('')
-  }
+  await task({
+    fn: () => shell(`cd ${outputPath} && code . && code . README.md`),
+    title: 'Opening VS Code',
+    successMessage: 'Opened VS Code',
+    errorMessage: 'Failed to open VS Code',
+    onError: async () => {
+      try {
+        await shell(`cd ${outputPath} && code-insiders . && code-insiders . README.md`)
+      } catch (error) {
+        console.log('')
+      }
+    },
+  })
+
+  await task({
+    fn: () => shell(`cd ${outputPath} && npm i`),
+    title: `Installing ${chalk.cyan(userArgs.name)} dependencies`,
+    successMessage: 'Dependencies installed',
+    errorMessage: 'Failed to install dependencies',
+  })
+
+  console.log('')
+  console.log(`🚀 ${chalk.cyan(userArgs.name)} ready ${chalk.yellow(fullOutPath)}`)
+  console.log('')
 }
