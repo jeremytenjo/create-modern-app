@@ -39,6 +39,7 @@
     "degit": "2.8.4",
     "enquirer": "2.3.6",
     "gradient-string": "2.0.1",
+    "listr": "0.14.3",
     "ts-node": "10.8.1",
     "vite": "2.9.12",
     "vitest": "0.16.0"
