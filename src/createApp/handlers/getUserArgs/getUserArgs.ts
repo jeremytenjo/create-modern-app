@@ -11,7 +11,7 @@ export type GetUserArgsReturn = {
   force: boolean
 }
 
-const types: GetUserArgsReturn['type'][] = ['webapp', 'website', 'demo']
+const types: GetUserArgsReturn['type'][] = ['website', 'webapp', 'demo']
 
 export default async function getUserArgs(): Promise<GetUserArgsReturn> {
   const args = getCommandLineArgs()
