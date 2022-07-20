@@ -38,7 +38,7 @@ export default async function getUserArgs(): Promise<GetUserArgsReturn> {
       name: 'type',
       message: 'Select app type',
       choices: types,
-      initial: 'webapp',
+      initial: 'website',
     })
 
     const type = (await prompt.run()) || res.type
