@@ -52,6 +52,12 @@ export default async function createApp() {
   })
 
   console.log('')
-  console.log(`🚀 ${chalk.cyan(userArgs.name)} ready ${chalk.yellow(fullOutPath)}`)
+  console.log(
+    `🚀 ${chalk.cyan(userArgs.name)} created. Run ${chalk.yellow(
+      `npm run dev`,
+    )} and start building!`,
+  )
+  console.log('')
+  console.log(`${chalk.yellow(fullOutPath)}`)
   console.log('')
 }
