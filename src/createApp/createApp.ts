@@ -31,13 +31,16 @@ export default async function createApp() {
   })
 
   await task({
-    fn: () => shell(`cd ${outputPath} && code . && code . README.md`),
+    fn: () =>
+      shell(`cd ${outputPath} && code . && code . ./src/pagesContent/Home/Home.tsx`),
     title: 'Opening VS Code',
     successMessage: 'Opened VS Code',
     errorMessage: 'Failed to open VS Code',
     onError: async () => {
       try {
-        await shell(`cd ${outputPath} && code-insiders . && code-insiders . README.md`)
+        await shell(
+          `cd ${outputPath} && code-insiders . && code-insiders . ./src/pagesContent/Home/Home.tsx`,
+        )
       } catch (error) {
         console.log('')
       }
