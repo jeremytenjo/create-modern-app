@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://hayletenjo.com/" rel="noopener" target="_blank"><img width="200" src="https://github.com/jeremytenjo/create-modern-app/blob/main/public/images/logo.png" alt="Create Modern App Logo"></a></p>
+  <a href="https://jeremytenjo.com/" rel="noopener" target="_blank"><img width="200" src="https://github.com/jeremytenjo/create-modern-app/blob/main/public/images/logo.png" alt="Create Modern App Logo"></a></p>
 </p>
 
 <h1 align="center">Create Modern App</h1>
@@ -20,19 +20,19 @@ npx create-modern-app
 npx create-modern-app --name newApp
 ```
 
-**type** `webapp` | `website` default `webapp`
+**type** `website` | `webapp` default `website`
 
 ```sh
 npx create-modern-app --name newApp --type website
 ```
 
-`webapp`
-
-Creates a Vite project with React, Storybook, MUI, Firebase, Vitest, Playwright, Prettier, ESLint useweb configured
-
 `website`
 
 Creates a Nextjs project with React, Storybook, MUI, Vitest, Playwright, Prettier, ESLint, useweb configured
+
+`webapp`
+
+Creates a Vite project with React, Storybook, MUI, Firebase, Vitest, Playwright, Prettier, ESLint useweb configured
 
 **force** default `false`
 
